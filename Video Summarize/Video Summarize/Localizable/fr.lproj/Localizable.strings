@@ -1,0 +1,26 @@
+/* 
+  Localizable.strings
+  chatplusai
+
+  Created by Ahmet Muhammet VURAL on 13.11.2024.
+  
+*/
+"Hadi Başlayalım!" = "Commençons!";
+"Uzun videoları hızlıca analiz eden yapay zekamız sayesinde zamandan tasarruf edin ve yalnızca önemli noktalara odaklanın." = "Gagnez du temps et concentrez-vous uniquement sur les points clés grâce à notre IA qui analyse rapidement les longues vidéos.";
+"🎉 Videolarınızı Hızla Özetleyin!" = "🎉 Résumez vos vidéos rapidement!";
+"Az Kaldı!" = "Presque prêt!";
+"Videolarınızı yükleyin veya bir YouTube bağlantısı ekleyin. Summar Video AI, saniyeler içinde sizin için özeti çıkarsın." = "Téléchargez vos vidéos ou ajoutez un lien YouTube. Summar Video AI créera un résumé pour vous en quelques secondes.";
+"🔍 Yapay Zeka Destekli Video Analizi" = "🔍 Analyse vidéo assistée par IA";
+"Başlayalım!" = "Allons-y!";
+"• Zamandan Tasarruf: Uzun videoları hızlıca inceleyin. \n• Doğru Özetler: Tam olarak neye ihtiyacınız varsa onu bulun. \n• Kullanımı Kolay: Birkaç tıkla sonuçlara ulaşın!" = "• Gagnez du temps : Examinez rapidement les longues vidéos. \n• Résumés précis : Trouvez exactement ce dont vous avez besoin. \n• Facile à utiliser : Obtenez des résultats en quelques clics!";
+"⚡ Önemli Anlara Anında Erişin" = "⚡ Accédez instantanément aux moments clés";
+"YouTube Video Linki" = "Lien Vidéo YouTube";
+"Silme Onayı" = "Confirmation de suppression";
+"Bu özeti silmek istediğinizden emin misiniz?" = "Êtes-vous sûr de vouloir supprimer ce résumé ?";
+"Evet" = "Oui";
+"Hayır" = "Non";
+"Henüz eklenmiş özet yok.\nLütfen yeni bir özet ekleyin!" = "Aucun résumé ajouté pour l'instant.\nVeuillez ajouter un nouveau résumé !";
+"dk" = "min";
+"İçerik Sayısı" = "Nombre de contenus";
+"Zaman Tasarrufu" = "Temps économisé";
+"Kelime Sayısı" = "Nombre de mots";

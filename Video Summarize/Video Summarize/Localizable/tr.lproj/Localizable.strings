@@ -1,0 +1,27 @@
+/* 
+  Localizable.strings
+  chatplusai
+
+  Created by Ahmet Muhammet VURAL on 13.11.2024.
+  
+*/
+"Hadi Başlayalım!" = "Hadi Başlayalım!";
+"Uzun videoları hızlıca analiz eden yapay zekamız sayesinde zamandan tasarruf edin ve yalnızca önemli noktalara odaklanın." = "Uzun videoları hızlıca analiz eden yapay zekamız sayesinde zamandan tasarruf edin ve yalnızca önemli noktalara odaklanın.";
+"🎉 Videolarınızı Hızla Özetleyin!" = "🎉 Videolarınızı Hızla Özetleyin!";
+"Az Kaldı!" = "Az Kaldı!";
+"Videolarınızı yükleyin veya bir YouTube bağlantısı ekleyin. Summar Video AI, saniyeler içinde sizin için özeti çıkarsın." = "Videolarınızı yükleyin veya bir YouTube bağlantısı ekleyin. Summar Video AI, saniyeler içinde sizin için özeti çıkarsın.";
+"🔍 Yapay Zeka Destekli Video Analizi" = "🔍 Yapay Zeka Destekli Video Analizi";
+"Başlayalım!" = "Başlayalım!";
+"• Zamandan Tasarruf: Uzun videoları hızlıca inceleyin. \n• Doğru Özetler: Tam olarak neye ihtiyacınız varsa onu bulun. \n• Kullanımı Kolay: Birkaç tıkla sonuçlara ulaşın!" = "• Zamandan Tasarruf: Uzun videoları hızlıca inceleyin. \n• Doğru Özetler: Tam olarak neye ihtiyacınız varsa onu bulun. \n• Kullanımı Kolay: Birkaç tıkla sonuçlara ulaşın!";
+"⚡ Önemli Anlara Anında Erişin" = "⚡ Önemli Anlara Anında Erişin";
+"YouTube Video Linki" = "YouTube Video Linki";
+"Silme Onayı" = "Silme Onayı";
+"Bu özeti silmek istediğinizden emin misiniz?" = "Bu özeti silmek istediğinizden emin misiniz?";
+"Evet" = "Evet";
+"Hayır" = "Hayır";
+"Henüz eklenmiş özet yok.\nLütfen yeni bir özet ekleyin!" = "Henüz eklenmiş özet yok.\nLütfen yeni bir özet ekleyin!";
+"dk" = "dk";
+"İçerik Sayısı" = "İçerik Sayısı";
+"Zaman Tasarrufu" = "Zaman Tasarrufu";
+"Kelime Sayısı" = "Kelime Sayısı";
+"Tamam" = "Tamam";

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Second Onboard View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="SecondOnboardViewController" id="Y6W-OH-hqX" customClass="SecondOnboardViewController" customModule="Video_Summarize" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="qkN-WG-gpB">
+                                <rect key="frame" x="16" y="91" width="361" height="224"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="224" id="CZp-35-hLN"/>
+                                    <constraint firstAttribute="width" constant="361" id="fLI-OV-9z5"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🔍 Yapay Zeka Destekli Video Analizi" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WtO-oA-BLe">
+                                <rect key="frame" x="32" y="347" width="328" height="81.333333333333314"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="328" id="sre-VG-o7O"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <color key="textColor" name="TextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Videolarınızı yükleyin veya bir YouTube bağlantısı ekleyin. Summar Video AI, saniyeler içinde sizin için özeti çıkarsın." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3lc-TX-LwG">
+                                <rect key="frame" x="32" y="460.33333333333331" width="328" height="93.333333333333314"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="328" id="Nzx-x6-6BB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" name="TextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="za0-68-b9z">
+                                <rect key="frame" x="16" y="585.66666666666663" width="361" height="53"/>
+                                <color key="backgroundColor" name="TextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="361" id="Pfa-5b-qlZ"/>
+                                    <constraint firstAttribute="height" constant="53" id="din-q0-epf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="➡️ Devam Et">
+                                    <color key="titleColor" name="PrimaryColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Idm-ZY-kgQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" name="PrimaryColor"/>
+                        <constraints>
+                            <constraint firstItem="WtO-oA-BLe" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="32" id="0VX-fM-IRR"/>
+                            <constraint firstItem="WtO-oA-BLe" firstAttribute="top" secondItem="qkN-WG-gpB" secondAttribute="bottom" constant="32" id="1bX-xU-WBE"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="qkN-WG-gpB" secondAttribute="trailing" constant="16" id="6kc-iB-1Zw"/>
+                            <constraint firstItem="qkN-WG-gpB" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="H1T-9g-Qrd"/>
+                            <constraint firstItem="za0-68-b9z" firstAttribute="top" secondItem="3lc-TX-LwG" secondAttribute="bottom" constant="32" id="N21-VE-aaq"/>
+                            <constraint firstItem="za0-68-b9z" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="OIT-my-Wsv"/>
+                            <constraint firstItem="qkN-WG-gpB" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="32" id="S8G-ty-9UD"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="3lc-TX-LwG" secondAttribute="trailing" constant="33" id="mho-C9-uOC"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="WtO-oA-BLe" secondAttribute="trailing" constant="33" id="nIY-Q0-8CS"/>
+                            <constraint firstItem="3lc-TX-LwG" firstAttribute="top" secondItem="WtO-oA-BLe" secondAttribute="bottom" constant="32" id="s5M-8F-Fpe"/>
+                            <constraint firstItem="3lc-TX-LwG" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="32" id="uMH-ac-0E4"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="za0-68-b9z" secondAttribute="trailing" constant="16" id="y9g-sj-Y3A"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="button" destination="za0-68-b9z" id="pCD-R0-LMR"/>
+                        <outlet property="descLabel" destination="3lc-TX-LwG" id="lAH-75-7qK"/>
+                        <outlet property="titleLabel" destination="WtO-oA-BLe" id="I2r-NP-hWc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="76" y="-2"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="2" width="1080" height="768"/>
+        <namedColor name="PrimaryColor">
+            <color red="0.92900002002716064" green="0.17599999904632568" blue="0.16500000655651093" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TextColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

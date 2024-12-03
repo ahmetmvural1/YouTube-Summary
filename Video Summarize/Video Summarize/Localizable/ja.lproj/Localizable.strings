@@ -1,0 +1,26 @@
+/* 
+  Localizable.strings
+  chatplusai
+
+  Created by Ahmet Muhammet VURAL on 13.11.2024.
+  
+*/
+"Hadi Başlayalım!" = "さあ始めましょう!";
+"Uzun videoları hızlıca analiz eden yapay zekamız sayesinde zamandan tasarruf edin ve yalnızca önemli noktalara odaklanın." = "長い動画を迅速に分析するAIで時間を節約し、重要なポイントだけに集中しましょう。";
+"🎉 Videolarınızı Hızla Özetleyin!" = "🎉 動画を素早く要約!";
+"Az Kaldı!" = "もう少しです!";
+"Videolarınızı yükleyin veya bir YouTube bağlantısı ekleyin. Summar Video AI, saniyeler içinde sizin için özeti çıkarsın." = "動画をアップロードするか、YouTubeリンクを追加してください。Summar Video AIが数秒で要約を作成します。";
+"🔍 Yapay Zeka Destekli Video Analizi" = "🔍 AI搭載の動画分析";
+"Başlayalım!" = "始めましょう!";
+"• Zamandan Tasarruf: Uzun videoları hızlıca inceleyin. \n• Doğru Özetler: Tam olarak neye ihtiyacınız varsa onu bulun. \n• Kullanımı Kolay: Birkaç tıkla sonuçlara ulaşın!" = "• 時間を節約: 長い動画を素早く確認。 \n• 正確な要約: 必要な情報を的確に取得。 \n• 使いやすい: 数回クリックするだけで結果にアクセス!";
+"⚡ Önemli Anlara Anında Erişin" = "⚡ 重要な瞬間に即座にアクセス";
+"YouTube Video Linki" = "YouTubeビデオリンク";
+"Silme Onayı" = "削除の確認";
+"Bu özeti silmek istediğinizden emin misiniz?" = "この概要を削除してもよろしいですか？";
+"Evet" = "はい";
+"Hayır" = "いいえ";
+"Henüz eklenmiş özet yok.\nLütfen yeni bir özet ekleyin!" = "まだ要約が追加されていません。\n新しい要約を追加してください！";
+"dk" = "分";
+"İçerik Sayısı" = "コンテンツ数";
+"Zaman Tasarrufu" = "節約時間";
+"Kelime Sayısı" = "単語数";

@@ -1,0 +1,56 @@
+/* Class = "UILabel"; text = "İçerik sayısı"; ObjectID = "07J-iU-pyR"; */
+"07J-iU-pyR.text" = "Cantidad de Contenido";
+
+/* Class = "UILabel"; text = "Özet Tipi"; ObjectID = "3GC-UJ-3ST"; */
+"3GC-UJ-3ST.text" = "Tipo de Resumen";
+
+/* Class = "UISegmentedControl"; 3WQ-mq-4Yb.segmentTitles[0] = "Kısa Özet"; ObjectID = "3WQ-mq-4Yb"; */
+"3WQ-mq-4Yb.segmentTitles[0]" = "Resumen Corto";
+
+/* Class = "UISegmentedControl"; 3WQ-mq-4Yb.segmentTitles[1] = "Uzun Özet"; ObjectID = "3WQ-mq-4Yb"; */
+"3WQ-mq-4Yb.segmentTitles[1]" = "Resumen Largo";
+
+/* Class = "UILabel"; text = "Kelime sayısı"; ObjectID = "6z3-qJ-BbU"; */
+"6z3-qJ-BbU.text" = "Recuento de Palabras";
+
+/* Class = "UILabel"; text = "Videolarınızı Akıllıca Özetliyoruz!"; ObjectID = "8dM-dh-FMR"; */
+"8dM-dh-FMR.text" = "¡Resumimos tus videos con inteligencia!";
+
+/* Class = "UILabel"; text = "✨ Yapay zeka destekli özetleme teknolojimizle uzun videolarınızı saniyeler içinde önemli noktalarına dönüştürüyoruz.\n\n🎥 Bekleyin, işin zor kısmını biz hallediyoruz.\n\n⏳ En iyi özet için videonuzun analizini tamamlıyoruz. Bu sırada bir fincan kahve alabilir ya da arkanıza yaslanabilirsiniz."; ObjectID = "Ehc-wD-FX9"; */
+"Ehc-wD-FX9.text" = "✨ Con nuestra tecnología de resumen impulsada por IA, transformamos tus videos largos en puntos clave en segundos.\n\n🎥 Espera, nos encargamos de la parte difícil.\n\n⏳ Para ofrecer el mejor resumen, estamos analizando tu video. Mientras tanto, puedes tomar una taza de café o relajarte.";
+
+/* Class = "UINavigationItem"; title = "Hazırlanıyor"; ObjectID = "FwL-9g-Rba"; */
+"FwL-9g-Rba.title" = "Preparando";
+
+/* Class = "UIButton"; normalTitle = "🚀 Hızlı Özet İçin Premium'a Geçin"; ObjectID = "PWR-Vj-G7z"; */
+"PWR-Vj-G7z.normalTitle" = "🚀 Actualiza a Premium para un Resumen Rápido";
+
+/* Class = "UILabel"; text = "⏳"; ObjectID = "c3V-gW-9Gx"; */
+"c3V-gW-9Gx.text" = "⏳";
+
+/* Class = "UILabel"; text = "Dil"; ObjectID = "caN-Sf-tZ3"; */
+"caN-Sf-tZ3.text" = "Idioma";
+
+/* Class = "UILabel"; text = "Hazırlanıyor"; ObjectID = "d5r-Zw-pYs"; */
+"d5r-Zw-pYs.text" = "Preparando";
+
+/* Class = "UIButton"; normalTitle = "Yapıştır"; ObjectID = "ev6-n0-Lv4"; */
+"ev6-n0-Lv4.normalTitle" = "Pegar";
+
+/* Class = "UILabel"; text = "Zaman Tasarrufu"; ObjectID = "hDU-RS-0IM"; */
+"hDU-RS-0IM.text" = "Ahorro de Tiempo";
+
+/* Class = "UITextField"; placeholder = "YouTube video linki"; ObjectID = "hpn-ma-fuE"; */
+"hpn-ma-fuE.placeholder" = "Enlace de Video de YouTube";
+
+/* Class = "UINavigationItem"; title = "Özet"; ObjectID = "mwq-bb-Z44"; */
+"mwq-bb-Z44.title" = "Resumen";
+
+/* Class = "UINavigationItem"; title = "Video Ekle"; ObjectID = "r2k-Cj-9ff"; */
+"r2k-Cj-9ff.title" = "Agregar Video";
+
+/* Class = "UILabel"; text = "Zaman tasarrufu"; ObjectID = "r6N-Dx-JHe"; */
+"r6N-Dx-JHe.text" = "Ahorro de Tiempo";
+
+/* Class = "UIButton"; normalTitle = "🍿 Özeti Oluştur"; ObjectID = "vlK-R9-C3O"; */
+"vlK-R9-C3O.normalTitle" = "🍿 Crear Resumen";

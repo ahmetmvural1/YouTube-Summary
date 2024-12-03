@@ -1,0 +1,56 @@
+/* Class = "UILabel"; text = "İçerik sayısı"; ObjectID = "07J-iU-pyR"; */
+"07J-iU-pyR.text" = "Количество контента";
+
+/* Class = "UILabel"; text = "Özet Tipi"; ObjectID = "3GC-UJ-3ST"; */
+"3GC-UJ-3ST.text" = "Тип резюме";
+
+/* Class = "UISegmentedControl"; 3WQ-mq-4Yb.segmentTitles[0] = "Kısa Özet"; ObjectID = "3WQ-mq-4Yb"; */
+"3WQ-mq-4Yb.segmentTitles[0]" = "Краткое резюме";
+
+/* Class = "UISegmentedControl"; 3WQ-mq-4Yb.segmentTitles[1] = "Uzun Özet"; ObjectID = "3WQ-mq-4Yb"; */
+"3WQ-mq-4Yb.segmentTitles[1]" = "Длинное резюме";
+
+/* Class = "UILabel"; text = "Kelime sayısı"; ObjectID = "6z3-qJ-BbU"; */
+"6z3-qJ-BbU.text" = "Количество слов";
+
+/* Class = "UILabel"; text = "Videolarınızı Akıllıca Özetliyoruz!"; ObjectID = "8dM-dh-FMR"; */
+"8dM-dh-FMR.text" = "Мы умно резюмируем ваши видео!";
+
+/* Class = "UILabel"; text = "✨ Yapay zeka destekli özetleme teknolojimizle uzun videolarınızı saniyeler içinde önemli noktalarına dönüştürüyoruz.\n\n🎥 Bekleyin, işin zor kısmını biz hallediyoruz.\n\n⏳ En iyi özet için videonuzun analizini tamamlıyoruz. Bu sırada bir fincan kahve alabilir ya da arkanıza yaslanabilirsiniz."; ObjectID = "Ehc-wD-FX9"; */
+"Ehc-wD-FX9.text" = "✨ С помощью нашей технологии резюме на основе ИИ мы превращаем ваши длинные видео в ключевые моменты за считанные секунды.\n\n🎥 Подождите, мы берем на себя трудную часть.\n\n⏳ Для лучшего резюме мы завершаем анализ вашего видео. В это время можете выпить чашечку кофе или просто расслабиться.";
+
+/* Class = "UINavigationItem"; title = "Hazırlanıyor"; ObjectID = "FwL-9g-Rba"; */
+"FwL-9g-Rba.title" = "Подготавливается";
+
+/* Class = "UIButton"; normalTitle = "🚀 Hızlı Özet İçin Premium'a Geçin"; ObjectID = "PWR-Vj-G7z"; */
+"PWR-Vj-G7z.normalTitle" = "🚀 Перейдите на Premium для быстрого резюме";
+
+/* Class = "UILabel"; text = "⏳"; ObjectID = "c3V-gW-9Gx"; */
+"c3V-gW-9Gx.text" = "⏳";
+
+/* Class = "UILabel"; text = "Dil"; ObjectID = "caN-Sf-tZ3"; */
+"caN-Sf-tZ3.text" = "Язык";
+
+/* Class = "UILabel"; text = "Hazırlanıyor"; ObjectID = "d5r-Zw-pYs"; */
+"d5r-Zw-pYs.text" = "Подготавливается";
+
+/* Class = "UIButton"; normalTitle = "Yapıştır"; ObjectID = "ev6-n0-Lv4"; */
+"ev6-n0-Lv4.normalTitle" = "Вставить";
+
+/* Class = "UILabel"; text = "Zaman Tasarrufu"; ObjectID = "hDU-RS-0IM"; */
+"hDU-RS-0IM.text" = "Экономия времени";
+
+/* Class = "UITextField"; placeholder = "YouTube video linki"; ObjectID = "hpn-ma-fuE"; */
+"hpn-ma-fuE.placeholder" = "Ссылка на видео YouTube";
+
+/* Class = "UINavigationItem"; title = "Özet"; ObjectID = "mwq-bb-Z44"; */
+"mwq-bb-Z44.title" = "Резюме";
+
+/* Class = "UINavigationItem"; title = "Video Ekle"; ObjectID = "r2k-Cj-9ff"; */
+"r2k-Cj-9ff.title" = "Добавить видео";
+
+/* Class = "UILabel"; text = "Zaman tasarrufu"; ObjectID = "r6N-Dx-JHe"; */
+"r6N-Dx-JHe.text" = "Экономия времени";
+
+/* Class = "UIButton"; normalTitle = "🍿 Özeti Oluştur"; ObjectID = "vlK-R9-C3O"; */
+"vlK-R9-C3O.normalTitle" = "🍿 Создать резюме";
