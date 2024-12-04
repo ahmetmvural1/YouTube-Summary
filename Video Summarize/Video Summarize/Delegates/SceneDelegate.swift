@@ -27,8 +27,43 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func sceneDidBecomeActive(_ scene: UIScene) {
-        // Called when the scene has moved from an inactive state to an active state.
-        // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
+        let sharedDefaults = UserDefaults(suiteName: "group.com.youtubeSummarizer")
+        var deepLink: String?
+
+        // Paylaşılan URL'yi kontrol et
+        if let sharedURL = sharedDefaults?.string(forKey: "sharedURL") {
+            deepLink = sharedURL
+            sharedDefaults?.removeObject(forKey: "sharedURL")
+            sharedDefaults?.synchronize()
+        }
+
+        // Paylaşılan Metni kontrol et
+        if let sharedText = sharedDefaults?.string(forKey: "sharedText") {
+            deepLink = sharedText
+            sharedDefaults?.removeObject(forKey: "sharedText")
+            sharedDefaults?.synchronize()
+        }
+
+        if let deepLink = deepLink {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            if let addViewController = storyboard.instantiateViewController(withIdentifier: "AddViewController") as? AddViewController {
+                addViewController.deeplink = deepLink
+                
+                // Root ViewController'dan NavigationController'ı alın
+                if let navigationController = UIApplication.shared.windows.first?.rootViewController as? UINavigationController {
+                    
+                    // Tüm ekranları temizle
+                    navigationController.popToRootViewController(animated: false)
+                    
+                    // `AddViewController`'ı yönlendirme
+                    navigationController.pushViewController(addViewController, animated: true)
+                } else {
+                    print("NavigationController bulunamadı.")
+                }
+            } else {
+                print("AddViewController yüklenemedi.")
+            }
+        }
     }
 
     func sceneWillResignActive(_ scene: UIScene) {
@@ -46,17 +81,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-    
+
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
-        if let url = URLContexts.first?.url, url.scheme == "yourapp" {
-            let sharedDefaults = UserDefaults(suiteName: "group.com.yourapp.identifier")
-            if let sharedLink = sharedDefaults?.string(forKey: "sharedLink") {
-                print("Alınan URL: \(sharedLink)")
-                // Paylaşılan URL'yi burada işleyin
-            }
+        if let url = URLContexts.first?.url, url.scheme == "youtubeSummarize" {
+            print("Uygulama bu URL ile açıldı: \(url)")
+            // URL'yi işlemek için buraya kod ekleyebilirsiniz
         }
     }
-
-
 }
 

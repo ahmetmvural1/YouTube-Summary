@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="j1y-V4-xli">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="j1y-V4-xli">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +12,94 @@
         <!--Share View Controller-->
         <scene sceneID="ceB-am-kn3">
             <objects>
-                <viewController id="j1y-V4-xli" customClass="ShareViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="j1y-V4-xli" customClass="ShareViewController" customModule="shareVideo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="wbc-yd-nQP">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xn2-6j-N1c">
+                                <rect key="frame" x="40" y="315" width="312" height="222"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="kSw-dx-wtc">
+                                        <rect key="frame" x="101" y="14" width="109" height="109"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="109" id="S7m-Gw-bXM"/>
+                                            <constraint firstAttribute="width" constant="109" id="alO-mS-TIt"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Özetle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4v2-px-Kh1">
+                                        <rect key="frame" x="132" y="112" width="49" height="42"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" name="TextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LKd-L7-DgU">
+                                        <rect key="frame" x="35" y="157" width="240" height="45"/>
+                                        <color key="backgroundColor" name="BackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="4JP-V9-xqO"/>
+                                            <constraint firstAttribute="width" constant="240" id="Z2W-bA-WJD"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Button"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="share:" destination="j1y-V4-xli" eventType="touchUpInside" id="2dW-lB-qQB"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" name="PrimaryColor"/>
+                                <constraints>
+                                    <constraint firstItem="kSw-dx-wtc" firstAttribute="leading" secondItem="Xn2-6j-N1c" secondAttribute="leading" constant="101" id="ApG-Nz-hGS"/>
+                                    <constraint firstItem="4v2-px-Kh1" firstAttribute="top" secondItem="kSw-dx-wtc" secondAttribute="bottom" constant="-11" id="Zqu-gC-Awy"/>
+                                    <constraint firstItem="4v2-px-Kh1" firstAttribute="centerX" secondItem="Xn2-6j-N1c" secondAttribute="centerX" constant="0.5" id="d5r-SS-j6Y"/>
+                                    <constraint firstItem="LKd-L7-DgU" firstAttribute="top" secondItem="4v2-px-Kh1" secondAttribute="bottom" constant="3" id="nlC-75-8el"/>
+                                    <constraint firstAttribute="trailing" secondItem="kSw-dx-wtc" secondAttribute="trailing" constant="102" id="pJd-IH-npv"/>
+                                    <constraint firstItem="LKd-L7-DgU" firstAttribute="leading" secondItem="Xn2-6j-N1c" secondAttribute="leading" constant="35" id="shT-4C-Fpl"/>
+                                    <constraint firstAttribute="trailing" secondItem="LKd-L7-DgU" secondAttribute="trailing" constant="37" id="tpn-Iy-n8q"/>
+                                    <constraint firstAttribute="bottom" secondItem="LKd-L7-DgU" secondAttribute="bottom" constant="20" id="uku-zy-ueU"/>
+                                    <constraint firstItem="kSw-dx-wtc" firstAttribute="top" secondItem="Xn2-6j-N1c" secondAttribute="top" constant="14" id="xg6-Wf-Dko"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="1Xd-am-t49"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="1Xd-am-t49" firstAttribute="trailing" secondItem="Xn2-6j-N1c" secondAttribute="trailing" constant="41" id="AxM-ye-Dl5"/>
+                            <constraint firstItem="Xn2-6j-N1c" firstAttribute="top" secondItem="1Xd-am-t49" secondAttribute="top" constant="256" id="Mni-65-BCw"/>
+                            <constraint firstItem="Xn2-6j-N1c" firstAttribute="leading" secondItem="1Xd-am-t49" secondAttribute="leading" constant="40" id="vWg-be-Kdg"/>
+                            <constraint firstItem="1Xd-am-t49" firstAttribute="bottom" secondItem="Xn2-6j-N1c" secondAttribute="bottom" constant="281" id="zcL-3J-2xR"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="shareButton" destination="LKd-L7-DgU" id="h21-j7-2iV"/>
+                        <outlet property="titleLabel" destination="4v2-px-Kh1" id="dYQ-oB-fvh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CEy-Cv-SGf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="130.53435114503816" y="-27.464788732394368"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon" width="1024" height="1024"/>
+        <namedColor name="BackgroundColor">
+            <color red="0.071000002324581146" green="0.071000002324581146" blue="0.071000002324581146" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="PrimaryColor">
+            <color red="0.92900002002716064" green="0.17599999904632568" blue="0.16500000655651093" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TextColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

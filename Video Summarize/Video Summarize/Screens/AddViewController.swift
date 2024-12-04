@@ -42,13 +42,13 @@ class AddViewController: UIViewController {
     @IBOutlet weak var linkTextField: UITextField! {
         didSet {
             linkTextField.font = UIFont(name: "SFProRounded-Regular", size: 16)!
-            linkTextField.placeholder = "Enter YouTube Link"
             
             let toolbar = UIToolbar()
-            toolbar.sizeToFit() // Toolbar boyutunu otomatik ayarla
+            toolbar.sizeToFit()
             
             // "Tamam" butonu ekleme
-            let doneButton = UIBarButtonItem(title: "Tamam", style: .done, target: self, action: #selector(doneButtonTapped))
+            let doneButton = UIBarButtonItem(title: Text.okButton, style: .done, target: self, action: #selector(doneButtonTapped))
+            doneButton.tintColor = .primary
             let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
             
             // Toolbar'a butonları ekle
@@ -66,15 +66,29 @@ class AddViewController: UIViewController {
     
     // MARK: - Properties
     private var animationView: LottieAnimationView?
+    
+    var deeplink: String?
 
     private var selectedLanguage: String = "tr" // Varsayılan dil Türkçe
     
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateButtonStyles(selectedButton: turkishButton) // Varsayılan seçili buton Türkçe
+        setDefaultLanguageBasedOnDevice() // Cihaz diline göre varsayılan dili ayarla
+        updateButtonStyles(selectedButton: getButtonForLanguage(selectedLanguage)) // Varsayılan seçili buton
         linkTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         self.hideKeyboardWhenTappedAround()
+        
+        if deeplink != nil {
+            linkTextField.text = deeplink
+            createButton.isEnabled = true
+            createButton.alpha = 1.0
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        linkTextField.becomeFirstResponder()
     }
     
     // MARK: - Actions
@@ -89,6 +103,60 @@ class AddViewController: UIViewController {
         }
     }
     
+    private func setDefaultLanguageBasedOnDevice() {
+        // Cihazın dilini algıla
+        let deviceLanguage = Locale.current.languageCode ?? "en" // Varsayılan dil İngilizce
+
+        switch deviceLanguage {
+        case "ru":
+            selectedLanguage = "ru"
+        case "de":
+            selectedLanguage = "de"
+        case "es":
+            selectedLanguage = "es"
+        case "pt":
+            selectedLanguage = "pt"
+        case "fr":
+            selectedLanguage = "fr"
+        case "en":
+            selectedLanguage = "en"
+        case "ja":
+            selectedLanguage = "ja"
+        case "it":
+            selectedLanguage = "it"
+        case "tr":
+            selectedLanguage = "tr"
+        default:
+            selectedLanguage = "en" // Desteklenmeyen diller için İngilizce varsayılıyor
+        }
+    }
+    
+    private func getButtonForLanguage(_ language: String) -> UIButton {
+        switch language {
+        case "ru":
+            return russiaButton
+        case "de":
+            return germanButton
+        case "es":
+            return spainButton
+        case "pt":
+            return portugalButton
+        case "fr":
+            return franchButton
+        case "en":
+            return englishButton
+        case "ja":
+            return japanButton
+        case "it":
+            return italianoButton
+        case "tr":
+            return turkishButton
+        default:
+            return englishButton // Varsayılan olarak İngilizce düğmesi seçili
+        }
+    }
+
+
     
     private func addLottieAnimation() {
         // Lottie animasyonunu yükle

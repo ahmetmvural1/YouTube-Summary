@@ -28,5 +28,6 @@ struct Text {
     static var wordTitle = "Kelime Sayısı".localized
     static var summaryTitle = "İçerik Sayısı".localized
     static var okButton = "Tamam".localized
+    static var summary = "Özet".localized
     
 }

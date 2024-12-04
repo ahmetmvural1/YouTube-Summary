@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		125B8DEF2D008F3600ACFD0C /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = 125B8DEE2D008F3600ACFD0C /* RevenueCat */; };
+		125B8DF22D00902200ACFD0C /* RevenueCatUI in Frameworks */ = {isa = PBXBuildFile; productRef = 125B8DF12D00902200ACFD0C /* RevenueCatUI */; };
 		12D264BA2CF8A191004FCA03 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 12D264B92CF8A191004FCA03 /* SkeletonView */; };
 		12E319C32CFE3CDC00BEEB26 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 12E319C22CFE3CDC00BEEB26 /* Lottie */; };
 		12E31A532CFF30F500BEEB26 /* shareVideo.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 12E31A492CFF30F500BEEB26 /* shareVideo.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		12E31B802D0075CC00BEEB26 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 12E31B7F2D0075CC00BEEB26 /* FirebaseAnalytics */; };
+		12E31B822D0075CC00BEEB26 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 12E31B812D0075CC00BEEB26 /* FirebaseDatabase */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +60,26 @@
 			);
 			target = 12E31A482CFF30F500BEEB26 /* shareVideo */;
 		};
+		12E31AE02D0030A200BEEB26 /* Exceptions for "Video Summarize" folder in "shareVideo" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"/Localized: Localizable/Localizable.strings",
+				"Extensions/String+Extensions.swift",
+				"Fonts/SF-Pro-Rounded-Black.otf",
+				"Fonts/SF-Pro-Rounded-Bold.otf",
+				"Fonts/SF-Pro-Rounded-Heavy.otf",
+				"Fonts/SF-Pro-Rounded-Light.otf",
+				"Fonts/SF-Pro-Rounded-Medium.otf",
+				"Fonts/SF-Pro-Rounded-Regular.otf",
+				"Fonts/SF-Pro-Rounded-Semibold.otf",
+				"Fonts/SF-Pro-Rounded-Thin.otf",
+				"Fonts/SF-Pro-Rounded-Ultralight.otf",
+				Localizable/Text.swift,
+				SupportingFile/Assets.xcassets,
+				"SupportingFile/GoogleService-Info.plist",
+			);
+			target = 12E31A482CFF30F500BEEB26 /* shareVideo */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -63,6 +87,7 @@
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				12DFC2602CF48EAF0002E922 /* Exceptions for "Video Summarize" folder in "Video Summarize" target */,
+				12E31AE02D0030A200BEEB26 /* Exceptions for "Video Summarize" folder in "shareVideo" target */,
 			);
 			path = "Video Summarize";
 			sourceTree = "<group>";
@@ -84,6 +109,10 @@
 			files = (
 				12D264BA2CF8A191004FCA03 /* SkeletonView in Frameworks */,
 				12E319C32CFE3CDC00BEEB26 /* Lottie in Frameworks */,
+				125B8DF22D00902200ACFD0C /* RevenueCatUI in Frameworks */,
+				125B8DEF2D008F3600ACFD0C /* RevenueCat in Frameworks */,
+				12E31B822D0075CC00BEEB26 /* FirebaseDatabase in Frameworks */,
+				12E31B802D0075CC00BEEB26 /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,11 +126,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		125B8DF02D00902200ACFD0C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		12DFC2452CF48EAD0002E922 = {
 			isa = PBXGroup;
 			children = (
 				12DFC2502CF48EAD0002E922 /* Video Summarize */,
 				12E31A4A2CFF30F500BEEB26 /* shareVideo */,
+				125B8DF02D00902200ACFD0C /* Frameworks */,
 				12DFC24F2CF48EAD0002E922 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -139,6 +176,10 @@
 			packageProductDependencies = (
 				12D264B92CF8A191004FCA03 /* SkeletonView */,
 				12E319C22CFE3CDC00BEEB26 /* Lottie */,
+				12E31B7F2D0075CC00BEEB26 /* FirebaseAnalytics */,
+				12E31B812D0075CC00BEEB26 /* FirebaseDatabase */,
+				125B8DEE2D008F3600ACFD0C /* RevenueCat */,
+				125B8DF12D00902200ACFD0C /* RevenueCatUI */,
 			);
 			productName = "Video Summarize";
 			productReference = 12DFC24E2CF48EAD0002E922 /* Video Summarize.app */;
@@ -204,6 +245,8 @@
 			packageReferences = (
 				12D264B82CF8A191004FCA03 /* XCRemoteSwiftPackageReference "SkeletonView" */,
 				12E319C12CFE3CDC00BEEB26 /* XCRemoteSwiftPackageReference "lottie-spm" */,
+				12E31B7E2D0075CC00BEEB26 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				125B8DED2D008F3600ACFD0C /* XCRemoteSwiftPackageReference "purchases-ios-spm" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 12DFC24F2CF48EAD0002E922 /* Products */;
@@ -455,12 +498,13 @@
 				INFOPLIST_FILE = shareVideo/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = shareVideo;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ahmetmvural.videoSummarize.shareVideo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -481,12 +525,13 @@
 				INFOPLIST_FILE = shareVideo/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = shareVideo;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ahmetmvural.videoSummarize.shareVideo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -529,6 +574,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		125B8DED2D008F3600ACFD0C /* XCRemoteSwiftPackageReference "purchases-ios-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RevenueCat/purchases-ios-spm.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.12.1;
+			};
+		};
 		12D264B82CF8A191004FCA03 /* XCRemoteSwiftPackageReference "SkeletonView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Juanpe/SkeletonView.git";
@@ -545,9 +598,27 @@
 				minimumVersion = 4.5.0;
 			};
 		};
+		12E31B7E2D0075CC00BEEB26 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.6.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		125B8DEE2D008F3600ACFD0C /* RevenueCat */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 125B8DED2D008F3600ACFD0C /* XCRemoteSwiftPackageReference "purchases-ios-spm" */;
+			productName = RevenueCat;
+		};
+		125B8DF12D00902200ACFD0C /* RevenueCatUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 125B8DED2D008F3600ACFD0C /* XCRemoteSwiftPackageReference "purchases-ios-spm" */;
+			productName = RevenueCatUI;
+		};
 		12D264B92CF8A191004FCA03 /* SkeletonView */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 12D264B82CF8A191004FCA03 /* XCRemoteSwiftPackageReference "SkeletonView" */;
@@ -557,6 +628,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 12E319C12CFE3CDC00BEEB26 /* XCRemoteSwiftPackageReference "lottie-spm" */;
 			productName = Lottie;
+		};
+		12E31B7F2D0075CC00BEEB26 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 12E31B7E2D0075CC00BEEB26 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		12E31B812D0075CC00BEEB26 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 12E31B7E2D0075CC00BEEB26 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

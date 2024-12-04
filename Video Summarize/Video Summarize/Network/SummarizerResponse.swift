@@ -21,6 +21,25 @@ struct SummarizerResponse: Codable {
     let duration: Int
 }
 
+struct Updated: Codable {
+    var isEnable: Bool
+    var iosVersion: String
+    var androidVersion: String
+    
+    enum CodingKeys: String, CodingKey {
+        case isEnable = "is_enable"
+        case iosVersion
+        case androidVersion
+    }
+
+    init(isEnable: Bool = false, iosVersion: String = "", androidVersion: String = "") {
+        self.isEnable = isEnable
+        self.iosVersion = iosVersion
+        self.androidVersion = androidVersion
+    }
+}
+
+
 
 
 class ResponseManager {

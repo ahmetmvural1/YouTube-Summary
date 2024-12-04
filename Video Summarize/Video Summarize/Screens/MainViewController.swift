@@ -6,6 +6,10 @@
 //
 
 import UIKit
+import FirebaseDatabase
+import FirebaseDatabaseInternal
+import RevenueCatUI
+import RevenueCat
 
 class MainViewController: UIViewController {
 
@@ -52,14 +56,88 @@ class MainViewController: UIViewController {
             initialViewController.modalPresentationStyle = .fullScreen
             self.navigationController?.pushViewController(initialViewController, animated: false)
         }
-        
-        
-        
+        checkMessage()
+        presentPurchaseViewController()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         setupEmptyStateView()
         loadResponses()
+        var deepLink: String?
+        let sharedDefaults = UserDefaults(suiteName: "group.com.youtubeSummarizer")
+        if let sharedURL = sharedDefaults?.string(forKey: "sharedURL") {
+            deepLink = sharedURL
+            sharedDefaults?.removeObject(forKey: "sharedURL")
+            sharedDefaults?.synchronize()
+        }
+        
+        if let sharedText = sharedDefaults?.string(forKey: "sharedText") {
+            deepLink = sharedText
+            sharedDefaults?.removeObject(forKey: "sharedText")
+            sharedDefaults?.synchronize()
+        }
+        
+        if deepLink != nil {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            if let addViewController = storyboard.instantiateViewController(withIdentifier: "AddViewController") as? AddViewController {
+                addViewController.deeplink = deepLink
+                self.navigationController?.pushViewController(addViewController, animated: true)
+            }
+        }
+
+  
+
+    }
+    
+    func checkMessage() {
+        fetchInAppMessage { inAppMessage in
+            if let inAppMessage = inAppMessage {
+                if inAppMessage.isEnable {
+                    let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+                    let storyboard = UIStoryboard.init(name: "Main", bundle: Bundle.main)
+                    let vc = storyboard.instantiateViewController(withIdentifier: "UpdatedViewController") as? UpdatedViewController
+                    vc?.modalPresentationStyle = .overFullScreen // TabBar'ın üstünde görünmesini sağlar
+                    vc?.modalTransitionStyle = .crossDissolve
+                    
+                    if inAppMessage.iosVersion != appVersion {
+                        self.present(vc ?? UIViewController(), animated: false)
+                    }
+                }
+            } else {
+                print("No in-app message available")
+            }
+        }
+    }
+    
+    func fetchInAppMessage(completion: @escaping (Updated?) -> Void) {
+        let ref = Database.database().reference().child("updated")
+        
+        ref.observeSingleEvent(of: .value, with: { snapshot in
+            guard let value = snapshot.value as? [String: Any] else {
+                completion(nil)
+                return
+            }
+            
+            do {
+                // Veriyi JSON olarak decode et
+                let jsonData = try JSONSerialization.data(withJSONObject: value, options: [])
+                let inAppMessage = try JSONDecoder().decode(Updated.self, from: jsonData)
+                completion(inAppMessage)
+            } catch {
+                print("Error decoding inAppMessage: \(error)")
+                completion(nil)
+            }
+        }) { error in
+            print("Error fetching data: \(error.localizedDescription)")
+            completion(nil)
+        }
+    }
+    
+    func presentPurchaseViewController() {
+        let controller = PaywallViewController(displayCloseButton: true)
+        controller.delegate = self
+        controller.modalPresentationStyle = .fullScreen
+        present(controller, animated: true, completion: nil)
     }
     
     private func setupEmptyStateView() {
@@ -179,4 +257,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         headerView.refreshCell(summarCount: responses.count, wordCount: data.totalWordCountInSummary, timeCount: data.totalDurationInMinutes)
         return headerView
     }
+}
+extension MainViewController: PaywallViewControllerDelegate {
+    
 }

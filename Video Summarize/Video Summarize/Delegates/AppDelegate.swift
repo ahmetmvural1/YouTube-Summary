@@ -6,10 +6,16 @@
 //
 
 import UIKit
+import Firebase
+import RevenueCat
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
+class AppDelegate: UIResponder, UIApplicationDelegate, PurchasesDelegate {
+    
+    func purchases(_ purchases: Purchases, receivedUpdated customerInfo: CustomerInfo) {
+//        let isPremium = customerInfo.entitlements.all[App.purchaseKey]?.isActive ?? false
+//        PremiumManager.shared.setIsPremiumUser(isPremium)
+    }
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -27,7 +33,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         UINavigationBar.appearance().tintColor = .primary // Geri düğmesi veya diğer öğeler için renk
         UINavigationBar.appearance().barTintColor = .clear // Arka plan rengi siyah
-
+        FirebaseApp.configure()
+        Purchases.logLevel = .debug
+        Purchases.configure(withAPIKey: "appl_PAGjmolPKICcHKidLuaISvGvEOY")
+        Purchases.shared.delegate = self
         return true
     }
 

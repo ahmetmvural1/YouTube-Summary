@@ -27,10 +27,10 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ibH-4N-2oG">
                         <rect key="frame" x="16" y="0.0" width="288" height="82"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Canım Can Abim kayak yapıyor bu videoyu izle kesin izle" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="Unm-OS-6JX">
-                                <rect key="frame" x="59" y="25" width="188" height="32"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="Unm-OS-6JX">
+                                <rect key="frame" x="59" y="25" width="200" height="32"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="188" id="UOT-HJ-Hof"/>
+                                    <constraint firstAttribute="width" constant="200" id="UOT-HJ-Hof"/>
                                     <constraint firstAttribute="height" constant="32" id="hkG-XL-Q6H"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SFProRounded-Semibold" family="SF Pro Rounded" pointSize="16"/>
@@ -38,9 +38,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zLf-Bq-B23">
-                                <rect key="frame" x="255" y="25.666666666666671" width="25" height="31"/>
+                                <rect key="frame" x="267" y="25.666666666666671" width="13" height="31"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="25" id="UDC-Bv-gBt"/>
+                                    <constraint firstAttribute="width" constant="13" id="UDC-Bv-gBt"/>
                                     <constraint firstAttribute="height" constant="31" id="VtZ-8m-1eK"/>
                                 </constraints>
                                 <color key="tintColor" name="InactiveIconColor"/>
