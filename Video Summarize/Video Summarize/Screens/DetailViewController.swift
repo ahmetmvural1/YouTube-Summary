@@ -9,6 +9,8 @@ import UIKit
 import WebKit
 import SkeletonView
 import AVFoundation
+import StoreKit
+
 
 class DetailViewController: UIViewController, WKNavigationDelegate {
     
@@ -16,6 +18,12 @@ class DetailViewController: UIViewController, WKNavigationDelegate {
     var data : SummarizerResponse?
 
     
+    @IBOutlet weak var shareButton: UIButton!{
+        didSet {
+            shareButton.titleLabel?.font = UIFont(name: "SFProRounded-Bold", size: 18)!
+            shareButton.setTitle(Text.shareSummary, for: .normal)
+        }
+    }
     @IBOutlet weak var timeLabel: UILabel! {
         didSet {
             timeLabel.font = UIFont(name: "SFProRounded-Bold", size: 22)!
@@ -68,6 +76,10 @@ class DetailViewController: UIViewController, WKNavigationDelegate {
         detailLabel.text = data?.summary
         videoID = data?.videoId
         loadYouTubeVideo(videoID: videoID ?? "")
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        requestAppReview()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -153,4 +165,30 @@ class DetailViewController: UIViewController, WKNavigationDelegate {
             UIApplication.shared.open(webURL, options: [:], completionHandler: nil)
         }
     }
+    @IBAction func shareButtonAction(_ sender: Any) {
+        shareSummary()
+    }
+    
+    @objc func shareSummary() {
+        let summary = Text.shareSummary
+        let appName = Text.shareDesc
+        let appLink = "https://ahmetmvural.com.tr/youtube-summarize-download/"
+        let shareMessage = """
+        \(summary)
+        \(detailLabel.text ?? "")
+
+        \(appName) \(appLink)
+        """
+
+        // Paylaşım ekranını aç
+        let activityViewController = UIActivityViewController(activityItems: [shareMessage], applicationActivities: nil)
+        present(activityViewController, animated: true, completion: nil)
+    }
+    
+    func requestAppReview() {
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+            SKStoreReviewController.requestReview(in: windowScene)
+        }
+    }
+
 }

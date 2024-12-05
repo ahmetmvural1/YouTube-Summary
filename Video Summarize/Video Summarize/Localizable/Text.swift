@@ -29,5 +29,12 @@ struct Text {
     static var summaryTitle = "İçerik Sayısı".localized
     static var okButton = "Tamam".localized
     static var summary = "Özet".localized
+    static var shareSummary = "Özeti Paylaş".localized
+    static var forceUpdateTitle = "Yeni Güncelleme Sizi Bekliyor!".localized
+    static var forceUpdateMessage = "En iyi deneyimi sunabilmemiz için uygulamamızı güncelledik! Hemen güncelleyin!".localized
+    static var forceUpdateOkButton = "Güncelle".localized
+    
+    static var summaryShareTitle = "🎥 Videonun Özeti:".localized
+    static var shareDesc = "Bu özeti YouTube Summarize uygulamasıyla oluşturdum! Sen de indir ve videolardan daha fazlasını öğren! 📚".localized
     
 }

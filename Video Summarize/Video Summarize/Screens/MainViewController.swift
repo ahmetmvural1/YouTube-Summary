@@ -192,7 +192,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: ListTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
         let data = responses[indexPath.row]
-        cell.refreshCell(title: data.title)
+        cell.refreshCell(title: data.title ?? "")
         return cell
     }
     

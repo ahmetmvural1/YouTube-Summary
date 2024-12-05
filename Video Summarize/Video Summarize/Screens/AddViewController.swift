@@ -127,7 +127,7 @@ class AddViewController: UIViewController {
         case "tr":
             selectedLanguage = "tr"
         default:
-            selectedLanguage = "en" // Desteklenmeyen diller için İngilizce varsayılıyor
+            selectedLanguage = "en"
         }
     }
     

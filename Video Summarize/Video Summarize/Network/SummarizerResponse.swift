@@ -13,12 +13,12 @@ struct SummarizerRequest: Codable {
 }
 
 struct SummarizerResponse: Codable {
-    let videoId: String
-    let message: String
-    let summary: String
-    let thumbnail: String
-    let title: String
-    let duration: Int
+    let videoId: String?
+    let message: String?
+    let summary: String?
+    let thumbnail: String?
+    let title: String?
+    let duration: Int?
 }
 
 struct Updated: Codable {
@@ -80,10 +80,10 @@ class ResponseManager {
         let responses = getResponses() // Mevcut metodunuz çağrılıyor
         
         // Toplam süre (dakika cinsine dönüştürerek)
-        let totalDuration = responses.reduce(0) { $0 + $1.duration } / 60
+        let totalDuration = responses.reduce(0) { $0 + ($1.duration ?? 0) } / 60
         
         // Summary'deki toplam kelime sayısı
-        let totalWordCount = responses.reduce(0) { $0 + $1.summary.split(separator: " ").count }
+        let totalWordCount = responses.reduce(0) { $0 + ($1.summary?.split(separator: " ").count ?? 0) }
         
         return (totalDuration, totalWordCount)
     }

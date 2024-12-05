@@ -12,19 +12,19 @@ class UpdatedViewController: UIViewController {
     @IBOutlet weak var updateButton: UIButton! {
         didSet {
             updateButton.titleLabel?.font = UIFont(name: "SFProRounded-Bold", size: 18)!
-            updateButton.setTitle("Güncelle", for: .normal)
+            updateButton.setTitle(Text.forceUpdateOkButton, for: .normal)
         }
     }
     @IBOutlet weak var descLabel: UILabel!{
         didSet {
             descLabel.font = UIFont(name: "SFProRounded-Regular", size: 18)!
-            descLabel.text = "En iyi deneyimi sunabilmemiz için uygulamamızı güncelledik! Hemen güncelleyin!"
+            descLabel.text = Text.forceUpdateMessage
         }
     }
     @IBOutlet weak var titleLabel: UILabel!{
         didSet {
             titleLabel.font = UIFont(name: "SFProRounded-Bold", size: 22)!
-            titleLabel.text = "Yeni Güncelleme Sizi Bekliyor!"
+            titleLabel.text = Text.forceUpdateTitle
         }
     }
     
