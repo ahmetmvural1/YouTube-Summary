@@ -19,6 +19,8 @@ struct SummarizerResponse: Codable {
     let thumbnail: String?
     let title: String?
     let duration: Int?
+    let createdAt: Date?
+    let langCode: String?
 }
 
 struct Updated: Codable {
@@ -48,33 +50,62 @@ class ResponseManager {
     private let responsesKey = "SavedResponses"
     
     // Response'u diziye ekle ve sakla
-    func saveResponse(_ response: SummarizerResponse) {
+    func saveResponse(_ response: SummarizerResponse, createdAt: Date?, langCode: String?) {
         var responses = getResponses() // Mevcut dizi
-        responses.append(response) // Yeni response'u ekle
+
+        // Varsayılan değerler belirliyoruz
+        let defaultDate = createdAt ?? Date() // Tarih yoksa şu anki tarihi kullan
+        let defaultLangCode = langCode ?? "unknown" // Dil kodu yoksa 'unknown' kullan
+
+        // Yeni yanıtın tarihini ve dil kodunu ekliyoruz
+        let responseWithDate = SummarizerResponse(
+            videoId: response.videoId,
+            message: response.message,
+            summary: response.summary,
+            thumbnail: response.thumbnail,
+            title: response.title,
+            duration: response.duration,
+            createdAt: defaultDate, // Varsayılan tarihi ekle
+            langCode: defaultLangCode // Varsayılan dil kodunu ekle
+        )
+
+        responses.append(responseWithDate) // Yeni response'u ekle
         if let data = try? JSONEncoder().encode(responses) {
             UserDefaults.standard.set(data, forKey: responsesKey)
         }
     }
-    
-    // Kaydedilmiş response'ların tümünü al
-    func getResponses() -> [SummarizerResponse] {
-        if let data = UserDefaults.standard.data(forKey: responsesKey),
-           let responses = try? JSONDecoder().decode([SummarizerResponse].self, from: data) {
-            return responses
-        }
-        return [] // Varsayılan boş dizi
-    }
-    
-    // Bir yanıtı sil
-    func removeResponse(at index: Int) {
-        var responses = getResponses()
-        if responses.indices.contains(index) {
-            responses.remove(at: index) // Diziden sil
-            if let data = try? JSONEncoder().encode(responses) {
-                UserDefaults.standard.set(data, forKey: responsesKey) // Güncel diziyi sakla
-            }
-        }
-    }
+
+       
+       // Kaydedilmiş response'ların tümünü al (En yeni ilk gelecek şekilde sıralanır)
+       func getResponses() -> [SummarizerResponse] {
+           if let data = UserDefaults.standard.data(forKey: responsesKey),
+              let responses = try? JSONDecoder().decode([SummarizerResponse].self, from: data) {
+               return responses.sorted { $0.createdAt ?? Date()  > $1.createdAt ?? Date() } // En yeni ilk
+           }
+           return [] // Varsayılan boş dizi
+       }
+       
+       // Bir yanıtı sil
+       func removeResponse(at index: Int) {
+           var responses = getResponses()
+           if responses.indices.contains(index) {
+               responses.remove(at: index) // Diziden sil
+               if let data = try? JSONEncoder().encode(responses) {
+                   UserDefaults.standard.set(data, forKey: responsesKey) // Güncel diziyi sakla
+               }
+           }
+       }
+       
+       // Video ID ile bir yanıtı güncelle
+       func updateResponse(for videoId: String, with updatedResponse: SummarizerResponse) {
+           var responses = getResponses()
+           if let index = responses.firstIndex(where: { $0.videoId == videoId }) {
+               responses[index] = updatedResponse // Yanıtı güncelle
+               if let data = try? JSONEncoder().encode(responses) {
+                   UserDefaults.standard.set(data, forKey: responsesKey) // Güncellenmiş diziyi sakla
+               }
+           }
+       }
     
     func getResponsesStatistics() -> (totalDurationInMinutes: Int, totalWordCountInSummary: Int) {
         let responses = getResponses() // Mevcut metodunuz çağrılıyor

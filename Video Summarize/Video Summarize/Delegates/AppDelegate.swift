@@ -10,12 +10,7 @@ import Firebase
 import RevenueCat
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate, PurchasesDelegate {
-    
-    func purchases(_ purchases: Purchases, receivedUpdated customerInfo: CustomerInfo) {
-//        let isPremium = customerInfo.entitlements.all[App.purchaseKey]?.isActive ?? false
-//        PremiumManager.shared.setIsPremiumUser(isPremium)
-    }
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -36,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PurchasesDelegate {
         FirebaseApp.configure()
         Purchases.logLevel = .debug
         Purchases.configure(withAPIKey: "appl_PAGjmolPKICcHKidLuaISvGvEOY")
-        Purchases.shared.delegate = self
+        
         return true
     }
 

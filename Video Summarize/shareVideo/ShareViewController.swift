@@ -18,7 +18,7 @@ class ShareViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!{
         didSet {
             titleLabel.font = UIFont(name: "SFProRounded-Bold", size: 24)!
-            titleLabel.text = "YouTube Summarize"
+            titleLabel.text = "AI Summarizer"
         }
     }
     override func viewDidLoad() {

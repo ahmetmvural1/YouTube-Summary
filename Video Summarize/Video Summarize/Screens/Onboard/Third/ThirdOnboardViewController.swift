@@ -36,6 +36,7 @@ class ThirdOnboardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        UserDefaults.standard.set(true, forKey: "isOnboarded")
     }
     
     override func viewDidDisappear(_ animated: Bool) {

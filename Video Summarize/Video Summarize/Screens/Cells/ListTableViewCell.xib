@@ -72,17 +72,29 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="wsH-Cq-cNz">
+                                <rect key="frame" x="59" y="63" width="200" height="13"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="xAX-2J-KmN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFProRounded-Semibold" family="SF Pro Rounded" pointSize="10"/>
+                                <color key="textColor" name="TextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" name="AppGray"/>
                         <constraints>
                             <constraint firstItem="ony-0c-PlV" firstAttribute="centerY" secondItem="ibH-4N-2oG" secondAttribute="centerY" id="0NJ-vv-9Ur"/>
                             <constraint firstItem="zLf-Bq-B23" firstAttribute="leading" secondItem="Unm-OS-6JX" secondAttribute="trailing" constant="8" id="6po-mT-Uv0"/>
                             <constraint firstAttribute="trailing" secondItem="zLf-Bq-B23" secondAttribute="trailing" constant="8" id="7rX-G3-JDD"/>
+                            <constraint firstItem="wsH-Cq-cNz" firstAttribute="leading" secondItem="ony-0c-PlV" secondAttribute="trailing" constant="8" symbolic="YES" id="9xg-C1-yAR"/>
                             <constraint firstItem="Unm-OS-6JX" firstAttribute="leading" secondItem="ony-0c-PlV" secondAttribute="trailing" constant="8" id="D5s-ke-Y5G"/>
                             <constraint firstAttribute="height" constant="82" id="KJs-Qr-Eeq"/>
                             <constraint firstItem="ony-0c-PlV" firstAttribute="leading" secondItem="ibH-4N-2oG" secondAttribute="leading" constant="8" id="Ovo-mo-baf"/>
                             <constraint firstItem="zLf-Bq-B23" firstAttribute="centerY" secondItem="ibH-4N-2oG" secondAttribute="centerY" id="YYR-G7-Gou"/>
                             <constraint firstItem="Unm-OS-6JX" firstAttribute="centerY" secondItem="ibH-4N-2oG" secondAttribute="centerY" id="Z60-vG-W5t"/>
+                            <constraint firstItem="wsH-Cq-cNz" firstAttribute="top" secondItem="Unm-OS-6JX" secondAttribute="bottom" constant="6" id="gAt-0R-xfe"/>
+                            <constraint firstAttribute="bottom" secondItem="wsH-Cq-cNz" secondAttribute="bottom" constant="6" id="hQf-0Y-ac0"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -102,6 +114,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="videoProcess" destination="wsH-Cq-cNz" id="y2j-cJ-CKw"/>
                 <outlet property="videoTitle" destination="Unm-OS-6JX" id="7HC-YG-1ug"/>
             </connections>
             <point key="canvasLocation" x="129.7709923664122" y="4.2253521126760569"/>

@@ -8,6 +8,7 @@
 import UIKit
 
 class ListTableViewCell: UITableViewCell {
+    @IBOutlet weak var videoProcess: UILabel!
     @IBOutlet weak var videoTitle: UILabel!
     @IBOutlet weak var videoImage: UIImageView!
     override func awakeFromNib() {
@@ -21,8 +22,10 @@ class ListTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func refreshCell(title: String) {
+    func refreshCell(title: String, isLoading: Bool) {
         videoTitle.text = title
+        let process = isLoading ? Text.processing : ""
+        videoProcess.text = process
     }
     
 }

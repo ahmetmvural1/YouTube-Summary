@@ -260,6 +260,7 @@ class AddViewController: UIViewController {
     }
     
     @IBAction func pasteButton(_ sender: Any) {
+        linkTextField.text = ""
         if let pastedText = UIPasteboard.general.string {
             linkTextField.text = pastedText
             if linkTextField.text?.count ?? 0 > 0 {
@@ -279,12 +280,22 @@ class AddViewController: UIViewController {
                 switch result {
                 case .success(let response):
                     self.removeLottieAnimation()
-                    ResponseManager.shared.saveResponse(response)
-                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    if let detailViewController = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController {
-                        detailViewController.data = response
-                        self.navigationController?.pushViewController(detailViewController, animated: true)
+                    ResponseManager.shared.saveResponse(response, createdAt: Date(), langCode: langCode)
+                    if response.message == "loading" { 
+                        let storyboard = UIStoryboard.init(name: "Main", bundle: Bundle.main)
+                        let vc = storyboard.instantiateViewController(withIdentifier: "ProcessViewController") as? ProcessViewController
+                        vc?.modalPresentationStyle = .overFullScreen
+                        vc?.modalTransitionStyle = .crossDissolve
+                        vc?.delegate = self
+                        self.present(vc ?? UIViewController(), animated: false)
+                    } else {
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        if let detailViewController = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController {
+                            detailViewController.data = response
+                            self.navigationController?.pushViewController(detailViewController, animated: true)
+                        }
                     }
+                    
                 case .failure(let error):
                     self.removeLottieAnimation()
                     self.showAlert(title: "Error", message: error.localizedDescription)
@@ -297,5 +308,10 @@ class AddViewController: UIViewController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: Text.okButton, style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
+    }
+}
+extension AddViewController: ProcessViewControllerDelegate {
+    func didDismiss() {
+        self.navigationController?.popViewController(animated: false)
     }
 }

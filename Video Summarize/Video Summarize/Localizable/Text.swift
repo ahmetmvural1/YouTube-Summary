@@ -34,6 +34,10 @@ struct Text {
     static var forceUpdateMessage = "En iyi deneyimi sunabilmemiz için uygulamamızı güncelledik! Hemen güncelleyin!".localized
     static var forceUpdateOkButton = "Güncelle".localized
     
+    static var videoProcessTitle = "Videonuz İşleniyor".localized
+    static var videoProcessDesc = "Size güzel bir özet çıkarmak için çalışmalara devam ediyoruz".localized
+    static var processing = "⏳ İşleniyor...".localized
+    
     static var summaryShareTitle = "🎥 Videonun Özeti:".localized
     static var shareDesc = "Bu özeti YouTube Summarize uygulamasıyla oluşturdum! Sen de indir ve videolardan daha fazlasını öğren! 📚".localized
     

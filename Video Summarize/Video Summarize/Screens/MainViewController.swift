@@ -12,7 +12,14 @@ import RevenueCatUI
 import RevenueCat
 
 class MainViewController: UIViewController {
-
+    
+    @IBOutlet weak var addView: UIView! {
+        didSet {
+            addView.layer.borderColor = UIColor.text.cgColor
+            addView.layer.borderWidth = 2
+        }
+    }
+    
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.delegate = self
@@ -20,7 +27,7 @@ class MainViewController: UIViewController {
             tableView.registerCell(type: ListTableViewCell.self)
         }
     }
-    
+    @IBOutlet weak var rightView: UIView!
     private let emptyStateView: UIView = {
         let view = UIView()
         view.isHidden = true // Varsayılan olarak gizlenmiş
@@ -55,14 +62,39 @@ class MainViewController: UIViewController {
             let initialViewController = UIStoryboard(name: "FirstOnboard", bundle: .main).instantiateViewController(withIdentifier: "FirstOnboardViewController") as! FirstOnboardViewController
             initialViewController.modalPresentationStyle = .fullScreen
             self.navigationController?.pushViewController(initialViewController, animated: false)
+        } else {
+            Purchases.shared.delegate = self
+            checkMessage()
         }
-        checkMessage()
-        presentPurchaseViewController()
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(rightViewTapped))
+                rightView.addGestureRecognizer(tapGesture)
+                rightView.isUserInteractionEnabled = true
+    }
+    
+    @objc func rightViewTapped() {
+        let youtubeAppURL = URL(string: "youtube://")! // Uygulama URL'si
+        let youtubeWebURL = URL(string: "https://www.youtube.com")! // Web URL'si
+
+        // Uygulama URL'siyle cihazda YouTube uygulamasını açmayı dene
+        if UIApplication.shared.canOpenURL(youtubeAppURL) {
+            UIApplication.shared.open(youtubeAppURL, options: [:], completionHandler: nil)
+        } else {
+            // YouTube uygulaması yoksa web sitesini aç
+            UIApplication.shared.open(youtubeWebURL, options: [:], completionHandler: nil)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         setupEmptyStateView()
         loadResponses()
+        let isPremium = UserDefaults.standard.bool(forKey: "isPremium")
+        if isPremium {
+            setupDeeplink()
+        }
+    }
+    
+    func setupDeeplink() {
         var deepLink: String?
         let sharedDefaults = UserDefaults(suiteName: "group.com.youtubeSummarizer")
         if let sharedURL = sharedDefaults?.string(forKey: "sharedURL") {
@@ -84,9 +116,6 @@ class MainViewController: UIViewController {
                 self.navigationController?.pushViewController(addViewController, animated: true)
             }
         }
-
-  
-
     }
     
     func checkMessage() {
@@ -134,7 +163,7 @@ class MainViewController: UIViewController {
     }
     
     func presentPurchaseViewController() {
-        let controller = PaywallViewController(displayCloseButton: true)
+        let controller = PaywallViewController(displayCloseButton: false)
         controller.delegate = self
         controller.modalPresentationStyle = .fullScreen
         present(controller, animated: true, completion: nil)
@@ -192,7 +221,8 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: ListTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
         let data = responses[indexPath.row]
-        cell.refreshCell(title: data.title ?? "")
+        let process = data.message == "loading"
+        cell.refreshCell(title: data.title ?? "", isLoading: process)
         return cell
     }
     
@@ -220,6 +250,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                 ResponseManager.shared.removeResponse(at: indexPath.row)
                 self.responses.remove(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .automatic)
+                tableView.reloadData()
                 self.updateEmptyState()
             }
             
@@ -259,5 +290,23 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 extension MainViewController: PaywallViewControllerDelegate {
+    func paywallViewController(_ controller: PaywallViewController,
+                               didFinishPurchasingWith customerInfo: CustomerInfo) {
+        let isPremium = !(customerInfo.entitlements.active.isEmpty)
+        UserDefaults.standard.set(isPremium, forKey: "isPremium")
+        if !isPremium {
+            controller.dismiss(animated: true)
+        }
+    }
     
+}
+extension MainViewController: PurchasesDelegate  {
+    func purchases(_ purchases: Purchases, receivedUpdated customerInfo: CustomerInfo) {
+        let isPremium = !(customerInfo.entitlements.active.isEmpty)
+        UserDefaults.standard.set(isPremium, forKey: "isPremium")
+        if !isPremium {
+            presentPurchaseViewController()
+        }
+        
+    }
 }

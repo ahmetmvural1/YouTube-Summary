@@ -38,7 +38,7 @@ class FirstOnboardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        UserDefaults.standard.set(true, forKey: "isOnboarded")
+       
     }
     
     override func viewWillAppear(_ animated: Bool) {
